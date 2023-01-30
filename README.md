@@ -64,7 +64,10 @@
 ストレス解消方法の一つの手段として使ってもらい、少しでもストレス解消の手助けになれば嬉しい。
 
 ### スケジュール
-企画〜技術調査及びREADME〜ER図作成：1/27〆切</br>
-メイン機能実装：1/28 - 3/3</br>
+企画〜技術調査及びREADME〜ER図作成：1/31〆切</br>
+メイン機能実装：2/1 - 3/3</br>
 β版をRUNTEQ内リリース（MVP)：3/4〆切</br>
 本番リリース：3/17
+
+### 画面遷移図
+Figma:[https://www.figma.com/file/I92jn5XpN6kTMQp2NKFACK/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=kvu9CHs5CFARt3WC-1]
