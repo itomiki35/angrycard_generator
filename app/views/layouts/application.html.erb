@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html data-theme="lemonade">
+<html data-theme="wireframe">
   <head>
-    <title>Portfolio</title>
+    <title>Angry Generator</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,9 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
+   
   </body>
 </html>
