@@ -1,0 +1,32 @@
+<div class="hero min-h-screen bg-white">
+  <div class="hero-content flex-col">
+    <div class="text-center my-4">
+      <h1 class="text-5xl font-bold"><%= t '.title' %></h1>
+    </div>
+    <div class="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
+      <div class="card-body">
+        <%= form_with model: @user, local: true do |f| %>
+        <div class="form-control my-2">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "input input-bordered" %>
+        </div>
+        <div class="form-control my-2">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "input input-bordered" %>
+        </div>
+        <div class="form-control my-2">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "input input-bordered" %>
+        </div>
+        <div class="form-control my-2">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "input input-bordered" %>
+        </div>
+        <div class="form-control p-4">
+          <%= f.submit (t 'defaults.register'), class: "btn btn-primary"%>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
