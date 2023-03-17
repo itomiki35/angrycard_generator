@@ -1,0 +1,13 @@
+<header class="navbar bg-black text-primary-content flex justify-between">
+  <div class="flex-1">
+    <%= image_tag('logo.png', width: 120) %>
+  </div>
+  <div class="hidden md:flex md:justify-end">
+    <ul class="menu menu-horizontal px-1 text-base-200">
+      <li><%= link_to '怒りの墓場', angry_cards_path %></li>
+      <li><%= link_to '投稿する', new_angry_card_path %></li>
+      <li><%= link_to 'マイページ', "#" %></li>
+      <li><%= link_to 'ログアウト', logout_path, class: "text-sm btn mx-8 bg-gray-400", method: :delete %></li>
+    </ul>
+  </div>
+</header>
