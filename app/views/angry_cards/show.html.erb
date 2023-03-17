@@ -1,0 +1,11 @@
+<div class="hero min-h-screen bg-white flex flex-col text-base-200">
+  <div class="hero-content text-center my-40">
+    <div class="max-w-lg">
+      <%= image_tag @angry_card.generated_card.url, size: '300x200' %>
+    <div class="card-actions justify-end">
+      <%= link_to '削除', angry_card_path(@angry_card.id), data: { turbo_method: :delete, turbo_confirm: '削除しますか?' }, class: 'btn btn-danger' %>
+    </div>
+      <%= link_to '一覧', angry_cards_path(@angry_card) %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="p-4 flex flex-col w-full">
+  <%= form_with model: @angry_card, local: true do |f| %>
+  
+    <div class="form-control">
+      
+      <%= f.label :title, class: "text-xl pt-4 font-bold" %>
+      <%= f.text_field :title, class: "input input-bordered" %>
+      
+      <%= f.label :body, class: "text-xl pt-4 font-bold"  %>
+      <%= f.text_area :body, class: "textarea textarea-bordered" %>
+      
+      <%= f.submit '投稿する', class: "btn btn-primary my-4"%>
+    </div>
+  <% end %>
+</div>
