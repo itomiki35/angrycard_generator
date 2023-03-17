@@ -1,6 +1,6 @@
 class AngryCardsController < ApplicationController
   def index
-    @angry_cards = AngryCard.all
+    @angry_cards = AngryCard.all.includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -8,9 +8,10 @@ class AngryCardsController < ApplicationController
   end
 
   def create
-    @angry_card = AngryCard.new(angry_card_params)
+    @angry_card = current_user.angry_cards.new(angry_card_params)
       @angry_card.create_image
       @angry_card.generate_image
+      #binding.pry
       if @angry_card.save
       
       # @angry_card.generate_image
