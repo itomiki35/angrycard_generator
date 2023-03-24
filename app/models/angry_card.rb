@@ -4,7 +4,7 @@ class AngryCard < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true, length: { maximum: 12 }
-  validates :body, presence: true, length: { maximum: 65535 }
+  validates :body, presence: true, length: { maximum: 52 }
 
   require 'base64'
   require 'net/http'
@@ -52,6 +52,11 @@ class AngryCard < ApplicationRecord
     file << bin
     file.rewind
 
+    file = MiniMagick::Image.read(file)
+    file = file.combine_options do |c|
+      c.resize '1000x900'
+    end
+
     self.image = file
    #binding.pry
   end
@@ -63,18 +68,18 @@ class AngryCard < ApplicationRecord
   def generate_image
     #binding.pry
     self_id = self.id
-    #binding.pry
-    text = prepare_text(body)
+    content = add_line_breaks(body)
     #binding.pry
     
-    card_image = MiniMagick::Image.open(self.image.file.file)
-    card_image.combine_options do |c|
-      c.resize '1000x900'
-    end
+    #card_image = MiniMagick::Image.open(self.image.file.file)
+    #binding.pry
+    #card_image.combine_options do |c|
+      #c.resize '1000x900'
+    #end
 
     base_image = MiniMagick::Image.open("app/assets/images/angry_card.png") 
     #binding.pry
-    result = base_image.composite(card_image) do |config|
+    result = base_image.composite(MiniMagick::Image.open(self.image.file.file)) do |config|
       #binding.pry
       config.compose 'Over'
       config.gravity 'center'
@@ -82,32 +87,27 @@ class AngryCard < ApplicationRecord
       #binding.pry
     end
   
-
     result.combine_options do |config|
       #binding.pry
       config.font 'app/assets/fonts/komorebi-gothic.ttf'
       config.fill 'black'
       config.gravity 'NorthWest'  #左上に合わせる
       config.pointsize 85
-      config.draw "text 90, 100 #{title}"
+      config.draw "text 90, 100 '#{title}'"
       config.pointsize 75
-      binding.pry
-      config.draw "text 100, 1300 #{body}"
-      binding.pry
+      #binding.pry
+      config.draw "text 100, 1300 '#{content}'"
     end
     
-    # ランダム背景
+    # ランダム背景 集中線背景
 
     # carrierwaveで保存する処理
-    # binding.pry
     self.generated_card = result
-
-    #binding.pry
   end
 
-  #def prepare_text(text)
-    #text.to_s.scan(/.{1, 13}/)[0...4].join("\n")
-  #end
+  def add_line_breaks(body, n = 13)
+    body.scan(/.{1,#{n}}/).join("\n")
+  end
 
   #def prepare_text(text, indention_count)
     #text.to_s.scan(/.{1,#{indention_count}}/)[0..ROW_LIMIT].join("\n")
