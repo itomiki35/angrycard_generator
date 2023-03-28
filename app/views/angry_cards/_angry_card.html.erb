@@ -1,12 +1,8 @@
-<div class="card w-96 bg-base-100 shadow-xl border w-screen">
-  <div class="h-screen grid grid-cols-5">
-   
-    <h2><%= link_to angry_card.title, angry_card_path(angry_card.id) %></h2>
-    
+
+  <div class="p-6">
     <% if angry_card.generated_card? %>
-      <%= image_tag angry_card.generated_card.url, size: '200x100' %>
-    <% end %>
-    
-    
+      <%= link_to angry_card_path(angry_card.id) do %>
+      <%= image_tag angry_card.generated_card.url, size: '150x100' %>
+      <% end %>
+    <% end %>  
   </div>
-</div>

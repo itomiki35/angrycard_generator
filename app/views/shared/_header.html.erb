@@ -1,9 +1,9 @@
-<header class="navbar bg-black text-primary-content flex justify-between">
-  <div class="flex-1">
-    <%= image_tag('logo.png', width: 120) %>
+<header class="navbar text-neutral-content flex justify-between">
+  <div class="flex-1 ">
+    <%= image_tag('logo.png', width: 80) %>
   </div>
   <div class="hidden md:flex md:justify-end">
-    <ul class="menu menu-horizontal px-1 text-base-200">
+    <ul class="menu menu-horizontal px-1">
       <li><%= link_to '怒りの墓場', angry_cards_path %></li>
       <li><%= link_to '投稿する', new_angry_card_path %></li>
       <li><%= link_to 'マイページ', "#" %></li>
