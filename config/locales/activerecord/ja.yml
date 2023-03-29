@@ -8,3 +8,6 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         name: '名前'
+      angry_card:
+        title: 'タイトル'
+        body: '内容'

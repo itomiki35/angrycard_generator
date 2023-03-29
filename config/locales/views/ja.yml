@@ -17,3 +17,7 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  angry_cards:
+    new:
+      title: 'タイトル'
+      body: '内容'
