@@ -1,5 +1,6 @@
 <div class="p-4 flex flex-col w-full">
   <%= form_with model: @angry_card, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
   
     <div class="form-control">
       
