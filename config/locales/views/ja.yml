@@ -19,8 +19,9 @@ ja:
       success: 'ログアウトしました'
   angry_cards:
     new:
-      title: 'タイトル'
-      body: '内容'
+      title: '召喚する'
+    index:
+      title: '怒りの墓場'
   pagination:
     first: '最初'
     last: '最後'
