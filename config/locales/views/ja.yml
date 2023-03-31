@@ -21,3 +21,7 @@ ja:
     new:
       title: 'タイトル'
       body: '内容'
+  pagination:
+    first: '最初'
+    last: '最後'
+    truncate: "&hellip;"

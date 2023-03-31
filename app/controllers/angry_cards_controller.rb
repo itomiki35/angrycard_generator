@@ -1,6 +1,6 @@
 class AngryCardsController < ApplicationController
   def index
-    @angry_cards = AngryCard.all.includes(:user).order(created_at: :desc).page(params[:page]).per(18)
+    @angry_cards = AngryCard.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
