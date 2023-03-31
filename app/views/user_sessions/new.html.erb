@@ -1,21 +1,21 @@
-<div class="hero min-h-screen bg-white">
-  <div class="hero-content flex-col">
-    <div class="text-center my-4">
-      <h1 class="text-5xl font-semibold"><%= t '.title' %></h1>
+<div class="hero min-h-screen bg-cover" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
+  <div class="hero-content flex-col border rounded bg-black mt-14 opacity-90">
+    <div class="text-center mt-6">
+      <h1 class="text-3xl font-semibold py-3"><%= t '.title' %></h1>
     </div>
-    <div class="card w-96 shadow-2xl bg-base-100">
+    <div class="card w-96 shadow-2xl">
       <div class="card-body">
         <%= form_with url: login_path, local: true do |f| %>
-          <div class="form-control my-2">
-            <%= f.label :email, User.human_attribute_name(:email) %>
-            <%= f.text_field :email, class: 'input input-bordered' %>
+          <div class="form-control">
+            <%= f.label :email, User.human_attribute_name(:email)%>
+            <%= f.text_field :email, class: 'input input-bordered rounded bg-gray-300 mb-3 mt-1' %>
           </div>
           <div class="form-control my-2">
             <%= f.label :password, User.human_attribute_name(:password) %>
-            <%= f.password_field :password, class: 'input input-bordered' %>
+            <%= f.password_field :password, class: 'input input-bordered rounded text-gray-800 bg-gray-300 mb-3 mt-1' %>
           </div>
           <div class="form-control my-4 pt-4">
-            <%= f.submit (t 'defaults.login'), class: 'btn btn-primary' %>
+            <%= f.submit (t 'defaults.login'), class: 'btn btn-primary rounded' %>
           </div>
         <% end %>
       </div>

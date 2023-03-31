@@ -1,33 +1,32 @@
-<div class="hero min-h-screen bg-white">
-  <div class="hero-content flex-col">
-    <div class="text-center my-4">
-      <h1 class="text-5xl font-bold"><%= t '.title' %></h1>
+<div class="hero min-h-screen bg-white bg-cover" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
+  <div class="hero-content flex-col border rounded bg-black mt-16 opacity-90">
+    <div class="text-center mt-6">
+      <h1 class="text-3xl font-bold"><%= t '.title' %></h1>
     </div>
-    <div class="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
-      <div class="card-body">
+      <div class="card flex-shrink-0 w-96">
         <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <div class="form-control my-2">
+        <div class="form-control mx-6">
           <%= f.label :name %>
-          <%= f.text_field :name, class: "input input-bordered" %>
+          <%= f.text_field :name, class: "input input-bordered rounded bg-gray-300 mb-2 mt-1" %>
         </div>
-        <div class="form-control my-2">
+        <div class="form-control my-2 mx-6">
           <%= f.label :email %>
-          <%= f.email_field :email, class: "input input-bordered" %>
+          <%= f.email_field :email, class: "input input-bordered rounded bg-gray-300 mb-2 mt-1" %>
         </div>
-        <div class="form-control my-2">
+        <div class="form-control my-2 mx-6">
           <%= f.label :password %>
-          <%= f.password_field :password, class: "input input-bordered" %>
+          <%= f.password_field :password, class: "input input-bordered rounded text-gray-800 bg-gray-300 mb-2 mt-1" %>
         </div>
-        <div class="form-control my-2">
+        <div class="form-control my-2 mx-6">
           <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: "input input-bordered" %>
+          <%= f.password_field :password_confirmation, class: "input input-bordered rounded text-gray-800 bg-gray-300 mb-2 mt-1" %>
         </div>
-        <div class="form-control p-4">
-          <%= f.submit (t 'defaults.register'), class: "btn btn-primary"%>
+        <div class="form-control py-3 mx-6">
+          <%= f.submit (t 'defaults.register'), class: "btn btn-primary rounded"%>
         </div>
-      <% end %>
+        <% end %>
+      
       </div>
-    </div>
   </div>
 </div>
