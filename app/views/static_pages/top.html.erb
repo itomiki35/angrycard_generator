@@ -1,9 +1,43 @@
-<div class="hero min-h-screen" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
-  <div class="hero-overlay bg-opacity-30"></div>
-  <!--<div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">-->
-      <h1 class="text-3xl font-semibold">アングリージェネレータ</h1>
-    <!--</div>
-  </div>-->
+<div class="hero min-h-screen flex flex-col" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
+  <div class="hero-content text-center my-20"></div>
+    <div class="max-w-7xl">
+      <h1 class="animate-text-shadow-pop-br text-4xl font-semibold">アングリーカードジェネレーター</h1>
+      <p class="animate-text-shadow-pop-br py-8 text-xl">俺のターン！ドロー！ストレスをアングリーカードとして召喚！<br>イラッとしたりモヤッとしたり・・日常のちょっとしたストレスを<br>カードゲーム風に遊び心を持って昇華させるためのアプリです。</p>
+    </div>
+
+    <% unless logged_in? %>
+    <div class="flex flex-col items-center my-6">
+      <button class="btn glass rounded">登録せずに召喚してみる</button>
+    </div>
+    <% end %>
+  
+    <div class="card border bg-black rounded my-16 mx-16">
+      <h1 class="animate-text-shadow-pop-br text-3xl font-semibold my-16 text-center">遊び方</h1>
+      
+      <div class="hero-content flex-col lg:flex-row mb-3 mx-8">
+        <%= image_tag 'step1.png', size: "400x260", class:"max-w-sm rounded shadow-2xl" %>
+        <div class="p-4">
+          <h2 class="animate-text-shadow-pop-br text-2xl font-semibold py-4">召喚フォームに入力しよう</h2>
+          <p>イラッとしたりモヤっとした出来事を、<br>「タイトル」と「内容」に分けて入力します。</p>
+          <p>入力した文章からAIがあなたのストレスの姿を画像生成し、<br>オリジナルのアングリーカードを召喚します。</p>
+        </div>
+      </div>
+
+      <div class="hero-content flex-col lg:flex-row-reverse mx-8 mb-14">
+        <%= image_tag 'step2.jpeg', size: "270x260", class:"max-w-sm rounded shadow-2xl" %>
+        <div class="p-4">
+          <h2 class="animate-text-shadow-pop-br text-2xl font-semibold py-4">アングリーカード召喚！</h2>
+          <p>あなたのストレスはどんなアングリーカードになって現れるでしょうか。</p>
+          <p>召喚されたカードを見てクスッと笑えて気持ちが昇華されるかもしれないし、<br>共有してネタとして昇華することもできます。</p>
+          <p>墓地に送られた他ユーザーのアングリーカードに共感したり、<br>自分のストレスを客観視して気持ちが昇華できるかも・・？</p>
+        </div>
+      </div>
+     
+      <% unless logged_in? %>
+      <div class="flex flex-col items-center">
+        <button class="btn bg-rose-900 rounded mb-12"><%= link_to '登録して召喚する', "#" %></button>
+      </div>
+      <% end %>
+    </div>
 </div>
 
