@@ -1,4 +1,6 @@
 class AngryCardsController < ApplicationController
+  skip_before_action :require_login, only: %i[new create show index]
+
   def index
     @angry_cards = AngryCard.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
@@ -8,7 +10,11 @@ class AngryCardsController < ApplicationController
   end
 
   def create
-    @angry_card = current_user.angry_cards.new(angry_card_params)
+    @angry_card = if current_user.nil?
+                    AngryCard.new(angry_card_params)
+                  else
+                    current_user.angry_cards.new(angry_card_params)
+                  end
       @angry_card.create_image
       @angry_card.generate_image
       #binding.pry
