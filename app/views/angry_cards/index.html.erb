@@ -1,25 +1,15 @@
-<div class="hero h-screen bg-cover" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
-  <div class="container pt-12">
+<div class="hero min-h-screen flex flex-col" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
+  <div class="hero-content text-center my-14"></div>
+    <div class="max-w-7xl text-center">
+      <h1 class="animate-text-shadow-pop-br text-4xl font-semibold"><%= t '.title' %></h1>
 
-    <div class="row">
-      <div class="col-12">
-        <div class="row">
-          <h1 class="text-3xl font-bold text-center m-4"><%= t '.title' %></h1>
-        </div>
-  
-        <div class="row">
-          <div class="justify-center flex flex-wrap">
-      
+      <div class="justify-center flex flex-wrap my-6">
           <% if @angry_cards.present? %>
             <%= render @angry_cards %>
           <% else %>
             <p><%= t('.no_result') %></p>
           <% end %>  
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-
 </div>
 <div class="flex justify-start md:justify-center btn-group w-screen m-2"><%= paginate @angry_cards %></div>
