@@ -7,7 +7,7 @@
 
     <% unless logged_in? %>
     <div class="flex flex-col items-center my-6">
-      <button class="btn glass rounded">登録せずに召喚してみる</button>
+      <button class="btn glass rounded"><%= link_to 'ゲストログインして召喚する', guest_login_path %></button>
     </div>
     <% end %>
   
@@ -35,7 +35,7 @@
      
       <% unless logged_in? %>
       <div class="flex flex-col items-center">
-        <button class="btn bg-rose-900 rounded mb-12"><%= link_to '登録して召喚する', "#" %></button>
+        <button class="btn bg-rose-900 rounded mb-12"><%= link_to 'ユーザー登録して召喚する', new_user_path %></button>
       </div>
       <% end %>
     </div>

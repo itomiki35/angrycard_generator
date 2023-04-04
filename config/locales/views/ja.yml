@@ -3,6 +3,8 @@ ja:
     login: 'ログイン'
     register: '新規登録'
     logout: 'ログアウト'
+    message:
+      require_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -22,6 +24,7 @@ ja:
       title: '召喚する'
     index:
       title: '怒りの墓場'
+      no_result: 'アングリーカードがありません'
   pagination:
     first: '最初'
     last: '最後'
