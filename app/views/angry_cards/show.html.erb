@@ -1,17 +1,15 @@
-<div class="hero min-h-screen" style="background-image: url(<%= asset_path('bg_colorful.jpg') %>);">
-  
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">
-      <%= image_tag @angry_card.generated_card.url, size: '300x200' %>
-    </div>
+<div class="hero min-h-screen flex flex-col" style="background-image: url(<%= asset_path('bg_colorful.jpg') %>);">
+  <div class="hero-content"></div>
+  <div class="max-w-md flex justify-center mt-32">
+    <%= image_tag @angry_card.generated_card.url, size: '300x200' %>
   </div>
-
+  
+  <div class="flex justify-center my-12">
+    <button class="btn rounded mx-3"><%= link_to '怒りの墓場', angry_cards_path(@angry_card) %></button>
+    <% if current_user.own?(@angry_card) %>
+      <button class="btn rounded px-9 mx-3"><%= link_to '削除', angry_card_path(@angry_card), data: { turbo_method: :delete, turbo_confirm: '削除しますか?' } %></button>
+    <% end %>
+  </div>
+  
 </div>
-    <div class="card-actions justify-center m-5">
-      <%= link_to '削除', angry_card_path(@angry_card.id), data: { turbo_method: :delete, turbo_confirm: '削除しますか?' }, class: 'btn btn-danger' %>
-    </div>
-    <div class="card-actions justify-center m-5">
-      <%= link_to '一覧', angry_cards_path(@angry_card) %>
-    </div>
-
  

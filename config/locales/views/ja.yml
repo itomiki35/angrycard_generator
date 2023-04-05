@@ -5,6 +5,8 @@ ja:
     logout: 'ログアウト'
     message:
       require_login: 'ログインしてください'
+      called: 'あなたのアングリーカードが召喚されました！'
+      deleted: 'アングリーカードを削除しました'
   users:
     new:
       title: 'ユーザー登録'

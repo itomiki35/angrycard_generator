@@ -25,7 +25,7 @@ class AngryCardsController < ApplicationController
        #@angry_card.save
        # トランザクション
 
-        redirect_to angry_card_path(@angry_card.id)
+        redirect_to angry_card_path(@angry_card.id), success: t('defaults.message.called')
       else
         render :new
       end
@@ -36,11 +36,10 @@ class AngryCardsController < ApplicationController
   end
 
   def destroy
-    @angry_card = AngryCard.find(params[:id])
+    @angry_card = current_user.angry_cards.find(params[:id])
     @angry_card.destroy
-    redirect_to angry_cards_path
+    redirect_to angry_cards_path, success: t('defaults.message.deleted'), status: :see_other
   end
-
 
   private
 
