@@ -1,5 +1,5 @@
 class AngryCardsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create show index]
+  before_action :require_login, only: %i[new create]
 
   def index
     @angry_cards = AngryCard.all.includes(:user).order(created_at: :desc).page(params[:page])
