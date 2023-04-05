@@ -1,14 +1,14 @@
-<header class="z-50 fixed top-0 left-0 right-0 bg-black h-24 opacity-80 flex justify-between">
-  <div class="flex-1 mt-1">
+<header class="z-50 fixed top-0 left-0 right-0 bg-black h-20 opacity-80 flex justify-between">
+  <div class="flex-1 pl-3">
     <%= link_to root_path do %>
-    <%= image_tag('logo3.png', width: 265) %>
+    <%= image_tag('logo3.png', width: 235) %>
     <% end %>
   </div>
   <div class="flex justify-end">
     <ul class="menu menu-horizontal px-1 font-bold">
       <li><%= link_to '怒りの墓場', angry_cards_path %></li>
       <li><%= link_to (t 'defaults.login'), login_path %></li>
-      <li class="pt-6"><%= link_to (t 'defaults.register'), new_user_path, class: "btn mx-8 px-7 bg-rose-900" %></li>
+      <li class="pt-4"><%= link_to (t 'defaults.register'), new_user_path, class: "btn mx-8 px-7 bg-rose-900" %></li>
     </ul>
   </div>
 </header>

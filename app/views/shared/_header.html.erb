@@ -1,8 +1,8 @@
 
-<header class="z-50 fixed top-0 left-0 right-0 bg-black h-24 opacity-80 flex justify-between">
-  <div class="flex-1 mt-1">
+<header class="z-50 fixed top-0 left-0 right-0 bg-black h-20 opacity-80 flex justify-between">
+  <div class="flex-1 ml-3">
       <%= link_to root_path do %>
-      <%= image_tag('logo3.png', width: 265) %>
+      <%= image_tag('logo3.png', width: 235) %>
       <% end %>
   </div>
 
@@ -11,7 +11,7 @@
       <li><%= link_to '怒りの墓場', angry_cards_path %></li>
       <li><%= link_to '召喚する', new_angry_card_path %></li>
       <li><%= link_to 'マイページ', "#" %></li>
-      <li class="pt-6"><%= link_to (t 'defaults.logout'), logout_path, class: "btn mx-8 bg-rose-900", method: :delete %></li>
+      <li class="pt-4"><%= link_to (t 'defaults.logout'), logout_path, class: "btn mx-8 bg-rose-900", method: :delete %></li>
     </ul>
     </div>
   </div>
