@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name":"angrycard_generator",
   "private": "true",
   "scripts": {
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
