@@ -19,19 +19,11 @@ class UserSessionsController < ApplicationController
   end
 
   def guest_login
-    @guest_user = User.new(
-      name: 'ゲスト',
-      email: 'guest_angrycard@example.com',
-      password: 'password',
-      password_confirmation: 'password',
-      guest: true
-    )
-    unless @guest_user.save
-      @guest_user = User.find_by(
-        email: 'guest_angrycard@example.com'
-      )
-    end
-    auto_login(@guest_user)
-    redirect_to new_angry_card_path, success: 'ゲストとしてログインしました'
+    redirect_to root_path, alert: 'すでにログインしています' if current_user
+
+    random_value = SecureRandom.hex
+    guest = User.create!(name: 'ゲスト', email: "guest_#{random_value}@example.com", password: "#{random_value}", password_confirmation: "#{random_value}", guest: true)
+    auto_login(guest)
+    redirect_to new_angry_card_path, success: 'ゲストユーザーとしてログインしました'
   end
 end
