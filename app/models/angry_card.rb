@@ -48,7 +48,6 @@ class AngryCard < ApplicationRecord
     file = Tempfile.new(['img', '.png'])
     #binding.pry
     file.binmode
-    # binding.pry
     file << bin
     file.rewind
 
@@ -61,25 +60,18 @@ class AngryCard < ApplicationRecord
    #binding.pry
   end
   
-  #def formated_body
-    #lines = body.lines.map { |line| line.scan(/.{1, 13}/) }.flatten
-  #end
-  
   def generate_image
     #binding.pry
     self_id = self.id
     content = add_line_breaks(body)
     #binding.pry
-    
-    #card_image = MiniMagick::Image.open(self.image.file.file)
-    #binding.pry
-    #card_image.combine_options do |c|
-      #c.resize '1000x900'
-    #end
 
     base_image = MiniMagick::Image.open("app/assets/images/angry_card.png") 
     #binding.pry
-    result = base_image.composite(MiniMagick::Image.open(self.image.file.file)) do |config|
+    
+    #s3_resource = Aws::S3::Resource.new
+    #card_image = s3_resource.bucket('angrycard-generator').object(key).get.body.read
+    result = base_image.composite(MiniMagick::Image.open("https://angrycard-generator.s3.ap-northeast-1.amazonaws.com/#{self.image.file.path}")) do |config|
       #binding.pry
       config.compose 'Over'
       config.gravity 'center'

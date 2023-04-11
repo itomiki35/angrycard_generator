@@ -1,4 +1,4 @@
-<div class="hero min-h-screen bg-white bg-cover" style="background-image: url(<%= asset_path('bg_image.jpeg') %>);">
+<div class="hero min-h-screen bg-white bg-cover" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
   <div class="hero-content flex-col border rounded bg-black mt-16 opacity-90">
     <div class="text-center mt-6">
       <h1 class="text-3xl font-bold"><%= t '.title' %></h1>
@@ -8,11 +8,11 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-control mx-6">
           <%= f.label :name %>
-          <%= f.text_field :name, class: "input input-bordered rounded bg-gray-300 mb-2 mt-1" %>
+          <%= f.text_field :name, class: "input input-bordered rounded text-gray-800 bg-gray-300 mb-2 mt-1" %>
         </div>
         <div class="form-control my-2 mx-6">
           <%= f.label :email %>
-          <%= f.email_field :email, class: "input input-bordered rounded bg-gray-300 mb-2 mt-1" %>
+          <%= f.email_field :email, class: "input input-bordered rounded text-gray-800 bg-gray-300 mb-2 mt-1" %>
         </div>
         <div class="form-control my-2 mx-6">
           <%= f.label :password %>
