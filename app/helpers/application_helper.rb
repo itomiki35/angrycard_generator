@@ -24,8 +24,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@itomiki_hiyoko',
-        image: '@angry_card_url'
+        site: '@itomiki_hiyoko'
       }
     }
   end
