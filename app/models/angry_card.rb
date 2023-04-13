@@ -95,7 +95,7 @@ class AngryCard < ApplicationRecord
 
     # carrierwaveで保存する処理
     self.generated_card = result
-    @angry_card_url = result['image_url']
+    @angry_card_url = self.generated_card
   end
 
   def add_line_breaks(body, n = 13)
