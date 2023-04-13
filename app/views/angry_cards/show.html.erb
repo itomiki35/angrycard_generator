@@ -5,8 +5,8 @@
     <%= image_tag @angry_card.generated_card.url, size: '300x200' %>
   </div>
   
-  <div class="flex justify-center mt-8 mb-4">
-    <%= link_to t('defaults.twitter_share'), "https://twitter.com/share?url=https://www.angrycard-generator.com/angry_cards/#{@angry_card.id}/&text=【あなたのアングリーカードが召喚されました！】/&hashtags=アングリーカードジェネレーター", title: 'Twitter', target: '_blank',class:'btn bg-blue-400 text-white border-none rounded' %>
+  <div class="flex justify-center mt-6 mb-3">
+    <%= link_to t('defaults.twitter_share'), "https://twitter.com/share?url=https://www.angrycard-generator.com/angry_cards/#{@angry_card.id}/&text=【あなたのアングリーカードが召喚されました！】&hashtags=アングリーカードジェネレーター", title: 'Twitter', target: '_blank',class:'btn bg-blue-400 text-white border-none rounded' %>
   </div>
 
   <div class="flex justify-center my-6">
