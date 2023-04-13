@@ -21,11 +21,12 @@ module ApplicationHelper
         url: 'https://www.angrycard-generator.com',
         image: image_url("ogp.png"),
         locale: 'ja_JP'
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@itomiki_hiyoko',
+        image: '@angry_card_url'
       }
-      #twitter: {
-        #card: 'summary_large_image',
-        #site: '@itomiki_hiyoko'
-      #}
     }
   end
 end
