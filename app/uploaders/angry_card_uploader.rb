@@ -5,12 +5,12 @@ class AngryCardUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  # if Rails.env.development?
-  storage :fog
+  #if Rails.env.development?
+    #storage :file
   #elsif Rails.env.test?
     #storage :file
   #else
-    #storage :fog
+  storage :fog
   #end
 
   # Override the directory where uploaded files will be stored.
