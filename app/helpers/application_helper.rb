@@ -25,7 +25,7 @@ module ApplicationHelper
       twitter: {
         card: 'summary_large_image',
         site: '@itomiki_hiyoko'
-        image: "https://angrycard-generator.s3.ap-northeast-1.amazonaws.com/#{self.generated_card.file.path}"
+        image: "https://angrycard-generator.s3.ap-northeast-1.amazonaws.com/#{@angry_card.generated_card.file.path}"
       }
     }
   end
