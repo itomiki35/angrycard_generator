@@ -1,9 +1,15 @@
+<% set_meta_tags og: {image: @angry_card.generated_card.url}, twitter: {image: @angry_card.generated_card.url} %>
+
 <div class="hero min-h-screen flex flex-col" style="background-image: url(<%= asset_path('bg_colorful.jpg') %>);">
   <div class="hero-content"></div>
   <div class="max-w-md flex justify-center mt-32">
     <%= image_tag @angry_card.generated_card.url, size: '300x200' %>
   </div>
   
+  <div class="flex justify-center my-12">
+    <%= link_to t('defaults.twitter_share'), "https://twitter.com/share?url=https://www.angrycard-generator.com/angry_cards/#{@angry_card.id}/&text=【あなたのアングリーカードが召喚されました！】", title: 'Twitter', target: '_blank',class:'btn bg-blue-400 text-white' %>
+  </div>
+
   <div class="flex justify-center my-12">
     <button class="btn rounded mx-3"><%= link_to '怒りの墓場', angry_cards_path(@angry_card) %></button>
     <% if current_user.own?(@angry_card) %>
