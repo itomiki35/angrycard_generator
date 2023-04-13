@@ -36,7 +36,7 @@ class AngryCardsController < ApplicationController
   end
 
   def destroy
-    @angry_card = AngryCard.find(params[:id])
+    @angry_card = current_user.angry_cards.find(params[:id])
     @angry_card.destroy
     redirect_to angry_cards_path, status: :see_other, success: t('defaults.message.deleted')
   end

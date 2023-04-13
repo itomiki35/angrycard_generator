@@ -13,7 +13,7 @@
 
   <div class="flex justify-center my-6">
     <button class="btn rounded mx-3"><%= link_to '怒りの墓場', angry_cards_path(@angry_card) %></button>
-    <% if current_user %>
+    <% if current_user && current_user.own?(@angry_card) %>
       <button class="btn rounded px-9 mx-3"><%= link_to '削除', angry_card_path(@angry_card), data: { turbo_method: :delete, turbo_confirm: "削除しますか?" } %></button>
     <% end %>
   </div>
