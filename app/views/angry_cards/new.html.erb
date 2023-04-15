@@ -1,8 +1,8 @@
-<div class="hero h-screen bg-cover" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
+<div class="hero min-h-screen bg-cover" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
   <div class="container">
-    <h1 class="animate-text-shadow-pop-br mt-6 mb-4 text-center text-4xl font-bold md:mb-8 lg:text-4xl"><%= t '.title' %></h1>
+    <h1 class="animate-text-shadow-pop-br mt-6 mb-4 text-center text-2xl font-bold md:mb-8 md:text-4xl"><%= t '.title' %></h1>
 
-      <div class="mx-auto max-w-lg rounded border bg-black">
+      <div class="mx-auto w-9/12 md:max-w-lg rounded border bg-black">
         <div class="flex flex-col gap-4 p-4 md:p-8">
           <%= form_with model: @angry_card, local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
@@ -19,7 +19,7 @@
             </div>
             <div class="max-auto text-center mt-8">
               <p class="mb-2">※召喚には少し時間がかかります。しばらくお待ちください。m(_ _)m</p>
-              <%= f.submit '召喚する', class: "btn btn-primary w-96 rounded border" %>
+              <%= f.submit '召喚する', class: "btn btn-primary w-11/12 rounded border md:w-96" %>
             </div>
           <% end %>
         </div>
