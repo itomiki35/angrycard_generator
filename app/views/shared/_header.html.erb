@@ -1,19 +1,31 @@
 
 <header class="z-50 fixed top-0 left-0 right-0 bg-black h-20 opacity-80 flex justify-between">
-  <div class="flex-1 ml-3">
+  <div class="flex-1 mt-4 md:mt-0 md:pl-3">
       <%= link_to root_path do %>
-      <%= image_tag('logo3.png', width: 235) %>
+      <%= image_tag 'logo3.png', width: 235 %>
       <% end %>
   </div>
 
     <div class="flex justify-end">
-    <ul class="menu menu-horizontal px-1 font-bold">
+    <ul class="text-sm menu menu-horizontal md:text-lg md:px-1 font-bold">
       <li><%= link_to '怒りの墓場', angry_cards_path %></li>
       <li><%= link_to '召喚する', new_angry_card_path %></li>
-      <li><%= link_to 'マイページ', my_page_path(current_user.id) %></li>
-      <li class="pt-4"><%= link_to (t 'defaults.logout'), logout_path, class: "btn mx-8 bg-rose-900", method: :delete %></li>
+
+      <div class="dropdown dropdown-end mt-4 mx-2 mr-8">
+        <label tabindex="0" class="btn btn-circle avatar" id="header-avatar">
+          <div class="w-14 rounded-full">
+            <%= image_tag('user_sample.png', size: "400x400") %>
+          </div>
+        </label>
+
+        <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 text-base-content">
+          <li><%= link_to 'マイページ', my_page_path(current_user.id) %></li>
+          <li><%= link_to (t 'defaults.logout'), logout_path, method: :delete %></li>
+        </ul>
+      </div>
     </ul>
+    
     </div>
-  </div>
+  
   
 </header>

@@ -7,6 +7,7 @@ ja:
       require_login: 'ログインしてください'
       called: 'あなたのアングリーカードが召喚されました！'
       deleted: 'アングリーカードを削除しました'
+    twitter_share: 'Twitterシェア'
   users:
     new:
       title: 'ユーザー登録'

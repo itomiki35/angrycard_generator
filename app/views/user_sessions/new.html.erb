@@ -1,9 +1,9 @@
 <div class="hero min-h-screen bg-cover" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
   <div class="hero-content flex-col border rounded bg-black mt-14 opacity-90">
     <div class="text-center mt-6">
-      <h1 class="text-3xl font-semibold py-3"><%= t '.title' %></h1>
+      <h1 class="text-2xl md:text-3xl font-semibold py-3"><%= t '.title' %></h1>
     </div>
-    <div class="card w-96 shadow-2xl">
+    <div class="card w-full md:w-96 shadow-2xl">
       <div class="card-body">
         <%= form_with url: login_path, local: true do |f| %>
           <div class="form-control">
