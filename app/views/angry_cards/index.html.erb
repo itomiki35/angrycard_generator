@@ -7,7 +7,7 @@
           <% if @angry_cards.present? %>
             <%= render @angry_cards %>
           <% else %>
-            <p><%= t('.no_result') %></p>
+            <div class="text-xl mt-6"><%= t('.no_result') %></div>
           <% end %>  
       </div>
 
