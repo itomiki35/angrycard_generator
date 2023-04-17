@@ -7,6 +7,8 @@ ja:
       require_login: 'ログインしてください'
       called: 'あなたのアングリーカードが召喚されました！'
       deleted: 'アングリーカードを削除しました'
+      updated: 'プロフィールを編集しました'
+      not_updated: 'プロフィールの編集に失敗しました'
     twitter_share: 'Twitterシェア'
   users:
     new:
@@ -28,6 +30,12 @@ ja:
     index:
       title: '怒りの墓場'
       no_result: 'アングリーカードがありません'
+  my_pages:
+    edit:
+      title: 'マイページ編集'
+    show:
+      title: 'マイページ'
+      no_result: '！アングリーカードがありません！'
   pagination:
     first: '最初'
     last: '最後'
