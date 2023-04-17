@@ -1,0 +1,36 @@
+<div class="hero min-h-screen flex flex-col" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
+  <div class="hero-content flex-col mt-28">
+    <h1 class="animate-text-shadow-pop-br text-xl md:text-4xl font-semibold"><%= t '.title' %></h1>
+  </div>
+
+  <div class="card w-full md:w-96 rounded border shadow-2xl bg-black mt-6 mb-14">
+    <div class="card-body">
+      <%= form_with model: @user, url: my_page_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+        <div class="mx-4 flex justify-center rounded-full">
+          <% if @user.avatar.present? %>
+            <%= image_tag @user.avatar.url, id: 'preview', size: '80x80' %>
+          <% else %>
+            <%= image_tag "user_sample.png", id: 'preview', size: '80x80' %>
+          <% end %>
+        </div>
+        <div class="form-control mb-4">
+          <%= f.label :avatar, User.human_attribute_name(:avatar) %>
+          <%= f.file_field :avatar, class: 'js-preview-image file-input file-input-accent w-full max-w-xs mb-3', accept: 'image/*' %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+        <div class="form-control">
+          <%= f.label :name, User.human_attribute_name(:name)%>
+          <%= f.text_field :name, class: 'input input-bordered text-gray-800 rounded bg-gray-300 mb-3 mt-1' %>
+        </div>
+        <div class="form-control my-2">
+          <%= f.label :email, User.human_attribute_name(:email) %>
+          <%= f.text_field :email, class: 'input input-bordered text-gray-800 rounded bg-gray-300 mb-3 mt-1' %>
+        </div>
+        <div class="form-control my-4 pt-4">
+          <%= f.submit '更新する', class: 'btn btn-primary rounded' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
