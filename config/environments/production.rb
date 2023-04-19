@@ -67,13 +67,10 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = false
-
-  config.action_mailer.default_url_options = { host: Settings.default_url_options[:host] }
-
-  config.action_mailer.delivery_method = :smtp
-
   config.action_mailer.perform_deliveries = true
-
+  config.action_mailer.delivery_method = :smtp
+  host = 'www.angrycard-generator.com'
+  config.action_mailer.default_url_options = { protcol: 'https', host: host }
   config.action_mailer.default :charset => 'utf-8'
 
   config.action_mailer.smtp_settings = {
@@ -82,7 +79,8 @@ Rails.application.configure do
     port: 587,
     user_name: ENV['GMAIL_ADDRESS'],
     password: ENV['GMAIL_PASSWORD'],
-    authentication: :plain
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
