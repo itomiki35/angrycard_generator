@@ -18,6 +18,9 @@
           <div class="form-control my-4 pt-4">
             <%= f.submit (t 'defaults.login'), class: 'btn btn-primary rounded' %>
           </div>
+          <div class="text-center">
+            <p>パスワードをお忘れの方は<%= link_to "こちら", new_password_reset_path, class: "link" %></p>
+          </div>
         <% end %>
       </div>
     </div>
