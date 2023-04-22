@@ -6,7 +6,6 @@
     <div class="card w-full md:w-96 shadow-2xl">
       <div class="card-body">
         <%= form_with url: login_path, local: true do |f| %>
-        
           <div class="form-control">
             <%= f.label :email, User.human_attribute_name(:email)%>
             <%= f.text_field :email, class: 'input input-bordered text-gray-800 rounded bg-gray-300 mb-3 mt-1' %>
