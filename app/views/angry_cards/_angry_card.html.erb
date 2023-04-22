@@ -1,8 +1,0 @@
-
-  <div class="p-6">
-    <% if angry_card.generated_card? %>
-      <%= link_to angry_card_path(angry_card.id) do %>
-      <%= image_tag angry_card.generated_card.url, size: '150x100' %>
-      <% end %>
-    <% end %>  
-  </div>
