@@ -19,8 +19,6 @@ class AngryCardsController < ApplicationController
       @angry_card.generate_image
       #binding.pry
       if @angry_card.save
-      
-      # @angry_card.generate_image
 
        #@angry_card.save
        # トランザクション
