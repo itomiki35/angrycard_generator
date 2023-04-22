@@ -1,0 +1,28 @@
+<div class="hero min-h-screen bg-cover" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
+  <div class="container">
+    <h1 class="animate-text-shadow-pop-br mt-6 mb-4 text-center text-2xl font-bold md:mb-8 md:text-4xl"><%= t '.title' %></h1>
+
+      <div class="mx-auto w-9/12 md:max-w-lg rounded border bg-black">
+        <div class="flex flex-col gap-4 p-4 md:p-8">
+          <%= form_with model: @angry_card, local: true do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          
+            <div>
+              <%= f.label :title, class: "my-1 inline-block text-lg text-gray-300 font-bold" %>
+              <p class="mb-2">※12字以内で入力してください。</p>
+              <%= f.text_field :title, class: "w-full rounded border bg-gray-300 px-3 py-2 mb-2 text-gray-800" %>
+            </div>
+
+            <div>
+              <%= f.label :body, class: "my-2 inline-block text-lg text-gray-300 font-bold" %>
+              <%= f.text_area :body, class: "w-full rounded border bg-gray-300 px-3 py-6 text-gray-800" %>
+            </div>
+            <div class="max-auto text-center mt-8">
+              <p class="mb-2">※召喚には少し時間がかかります。しばらくお待ちください。m(_ _)m</p>
+              <%= f.submit '召喚する', class: "btn btn-primary w-11/12 rounded border md:w-96" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

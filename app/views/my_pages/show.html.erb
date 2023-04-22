@@ -1,0 +1,49 @@
+<div class="hero min-h-screen flex flex-col" style="background-image: url(<%= asset_path('bg_image.jpg') %>);">
+  <div class="hero-content flex-col mt-28">
+    <h1 class="animate-text-shadow-pop-br text-xl md:text-4xl font-semibold"><%= t '.title' %></h1>
+
+      <div class="card w-96 rounded border shadow-2xl bg-black mt-6">
+        <div class="flex justify-center">
+          <div class="w-20 rounded-full mt-8">
+            <% if current_user.avatar_url %>
+              <%= image_tag current_user.avatar_url, size: '70x70' %>
+            <% else %>
+              <%= image_url('user_sample.png', size: "70x70") %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="text-lg pt-2 font-bold">名前</div>
+          <div class="bg-gray-200 py-2 mx-16 rounded text-black"><%= @user.name %></div>
+        </div>
+        <div class="text-center">
+          <div class="text-lg pt-4 font-bold">メールアドレス</div>
+          <div class="bg-gray-200 py-2 mx-16 rounded text-black"><%= @user.email %></div>
+        </div>
+        <div class="text-center my-8">
+          <div><%= link_to '編集', edit_my_page_path, class: 'btn btn-accent rounded' %></div>
+        </div>
+      </div>
+  
+      
+      <div class="text-xl font-semibold mt-14">＜あなたのアングリーカード＞</div>
+        
+        <% if @angry_cards.present? %>
+          <div class="justify-center flex flex-wrap mt-3 mb-8">     
+            <% @angry_cards.each do |angry_card| %>
+            <div class="p-6">
+              <%= link_to angry_card_path(angry_card.id) do %>
+              <%= image_tag angry_card.generated_card.url, size: '150x100' %>
+              <% end %>
+            </div>
+            <% end %>      
+          <% else %>
+            <div class="text-xl mt-6"><%= t('.no_result') %></div>
+          <% end %>
+        </div>
+      
+  </div>
+</div>
+
+<div class="flex justify-start md:justify-center btn-group w-screen m-2"><%= paginate @angry_cards %></div>

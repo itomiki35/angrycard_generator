@@ -1,0 +1,56 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '新規登録'
+    logout: 'ログアウト'
+    password_reset: 'パスワードリセット'
+    message:
+      require_login: 'ログインしてください'
+      called: 'あなたのアングリーカードが召喚されました！'
+      deleted: 'アングリーカードを削除しました'
+      updated: 'プロフィールを編集しました'
+      not_updated: 'プロフィールの編集に失敗しました'
+    twitter_share: 'Twitterシェア'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    edit:
+      title: 'パスワードリセット'
+      submit: '送信'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
+  users:
+    new:
+      title: 'ユーザー登録'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  angry_cards:
+    new:
+      title: '召喚する'
+    index:
+      title: '怒りの墓場'
+      no_result: 'アングリーカードがありません'
+  my_pages:
+    edit:
+      title: 'マイページ編集'
+    show:
+      title: 'マイページ'
+      no_result: '！アングリーカードがありません！'
+  pagination:
+    first: '最初'
+    last: '最後'
+    truncate: "&hellip;"
