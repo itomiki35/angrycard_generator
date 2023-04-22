@@ -7,16 +7,16 @@
     <div class="card-body">
       <%= form_with model: @user, url: my_page_path, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-        <div class="mx-4 flex justify-center rounded-full">
+        <div data-controller="preview-avatar" class="mx-4 flex justify-center rounded-full">
           <% if @user.avatar.present? %>
-            <%= image_tag @user.avatar.url, id: 'preview', size: '80x80' %>
+            <%= image_tag @user.avatar.url, size: '80x80', data: { target: "preview-avatar.output", required: true } %>
           <% else %>
-            <%= image_tag "user_sample.png", id: 'preview', size: '80x80' %>
+            <%= image_tag "user_sample.png", size: '80x80' %>
           <% end %>
         </div>
         <div class="form-control mb-4">
           <%= f.label :avatar, User.human_attribute_name(:avatar) %>
-          <%= f.file_field :avatar, class: 'js-preview-image file-input file-input-accent w-full max-w-xs mb-3', accept: 'image/*' %>
+          <%= f.file_field :avatar, data: { target: "preview-avatar.input", action: "preview-avatar#readURL" }, class: 'w-full max-w-xs mb-3' %>
           <%= f.hidden_field :avatar_cache %>
         </div>
         <div class="form-control">
