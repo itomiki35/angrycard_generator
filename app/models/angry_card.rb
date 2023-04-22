@@ -53,7 +53,7 @@ class AngryCard < ApplicationRecord
 
     file = MiniMagick::Image.read(file)
     file = file.combine_options do |c|
-      c.resize '1000x900'
+      c.resize '220x210'
     end
 
     self.image = file
@@ -67,15 +67,16 @@ class AngryCard < ApplicationRecord
     #binding.pry
 
     base_image = MiniMagick::Image.open("app/assets/images/angry_card.png") 
+    base_image = base_image.combine_options do |c|
+      c.resize '500x400'
+    end
     #binding.pry
     
-    #s3_resource = Aws::S3::Resource.new
-    #card_image = s3_resource.bucket('angrycard-generator').object(key).get.body.read
     result = base_image.composite(MiniMagick::Image.open("https://angrycard-generator.s3.ap-northeast-1.amazonaws.com/#{self.image.file.path}")) do |config|
       #binding.pry
       config.compose 'Over'
       config.gravity 'center'
-      config.geometry '+2-98'
+      config.geometry '+1-23'
       #binding.pry
     end
   
@@ -84,11 +85,11 @@ class AngryCard < ApplicationRecord
       config.font 'app/assets/fonts/komorebi-gothic.ttf'
       config.fill 'black'
       config.gravity 'NorthWest'  #左上に合わせる
-      config.pointsize 85
-      config.draw "text 90, 100 '#{title}'"
-      config.pointsize 75
+      config.pointsize 20
+      config.draw "text 17, 20 '#{title}'"
+      config.pointsize 17
       #binding.pry
-      config.draw "text 100, 1300 '#{content}'"
+      config.draw "text 25, 302 '#{content}'"
     end
     
     # ランダム背景 集中線背景
