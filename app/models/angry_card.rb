@@ -53,7 +53,7 @@ class AngryCard < ApplicationRecord
 
     file = MiniMagick::Image.read(file)
     file = file.combine_options do |c|
-      c.resize '220x210'
+      c.resize '395x365'
     end
 
     self.image = file
@@ -68,7 +68,7 @@ class AngryCard < ApplicationRecord
 
     base_image = MiniMagick::Image.open("app/assets/images/angry_card.png") 
     base_image = base_image.combine_options do |c|
-      c.resize '500x400'
+      c.resize '800x700'
     end
     #binding.pry
     
@@ -76,7 +76,7 @@ class AngryCard < ApplicationRecord
       #binding.pry
       config.compose 'Over'
       config.gravity 'center'
-      config.geometry '+1-23'
+      config.geometry '+0-40'
       #binding.pry
     end
   
@@ -85,11 +85,11 @@ class AngryCard < ApplicationRecord
       config.font 'app/assets/fonts/komorebi-gothic.ttf'
       config.fill 'black'
       config.gravity 'NorthWest'  #左上に合わせる
-      config.pointsize 20
-      config.draw "text 17, 20 '#{title}'"
-      config.pointsize 17
+      config.pointsize 35
+      config.draw "text 29, 35 '#{title}'"
+      config.pointsize 30
       #binding.pry
-      config.draw "text 25, 302 '#{content}'"
+      config.draw "text 42, 530 '#{content}'"
     end
     
     # ランダム背景 集中線背景
@@ -99,7 +99,7 @@ class AngryCard < ApplicationRecord
   end
 
   def add_line_breaks(body, n = 13)
-    body.scan(/.{1,#{n}}/).join("\n")
+    body.scan(/.{1,#{n}}/)[0..4].join("\n")
   end
 
   #def prepare_text(text, indention_count)
