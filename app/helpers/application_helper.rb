@@ -19,7 +19,7 @@ module ApplicationHelper
         description: '「アングリーカードジェネレーター」は、日常のちょっとしたストレスを、カードゲーム風に遊び心を持って昇華させるサービスです。',
         type: 'website',
         url: 'https://www.angrycard-generator.com',
-        image: image_url("ogp.jpg"),
+        image: image_url("ogp2.jpg"),
         locale: 'ja_JP'
       },
       twitter: {
