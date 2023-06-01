@@ -85,8 +85,8 @@ class AngryCard < ApplicationRecord
       config.font 'app/assets/fonts/komorebi-gothic.ttf'
       config.fill 'black'
       config.gravity 'NorthWest'  #左上に合わせる
-      config.pointsize 35
-      config.draw "text 29, 35 '#{title}'"
+      config.pointsize 34
+      config.draw "text 35, 35 '#{title}'"
       config.pointsize 30
       #binding.pry
       config.draw "text 42, 530 '#{content}'"
