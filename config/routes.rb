@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :my_pages, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
 
+  post '/oauths/callback', to: 'oauth#callback'
 end
