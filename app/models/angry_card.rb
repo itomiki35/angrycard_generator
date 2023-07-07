@@ -43,9 +43,10 @@ class AngryCard < ApplicationRecord
     #end 
     
     # base64エンコード文字をcarrierwaveで画像に変換し保存する
-    start = b64_image.index(',') + 1
-    bin = Base64.decode64 b64_image[start .. -1]
-    file = Tempfile.new(['img', '.png'])
+    start = b64_image.index(',') + 1    # 引数に指定された文字列を左端から右に向かって検索して最初に出現するインデックスを返すメソッド
+    # start = 22
+    bin = Base64.decode64 b64_image[start .. -1]  # 与えられた文字列をBase64デコードしたデータを返す  startから-1まで
+    file = Tempfile.new(['img', '.png'])  # テンポラリファイルを作成し、それを表す Tempfile オブジェクトを生成して返す
     #binding.pry
     file.binmode
     file << bin
